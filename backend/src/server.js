@@ -18,10 +18,12 @@ app.use(express.json());
 // Tell express to use a URL Encoding middleware
 app.use(express.urlencoded({ extended: true }));
 
-//Add routers below:
+import userRouter from "./routes/user.js";
 
+// Add routers below:
+app.use('/user', userRouter);
 
-//Middleware
+// Middleware
 
 
 // Test route to check if server is running 

@@ -7,6 +7,9 @@
   "scripts": {
     "start": "npx nodemon ./src/server.js"
   },
+  "prisma": {
+    "seed": "node prisma/seed.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

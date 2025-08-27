@@ -12,6 +12,7 @@ import morgan from "morgan";
 const app = express();
 app.disable("x-powered-by");
 app.use(cors());
+app.use(morgan("dev"));
 // Tell express to use a JSON parser middleware
 app.use(express.json());
 // Tell express to use a URL Encoding middleware

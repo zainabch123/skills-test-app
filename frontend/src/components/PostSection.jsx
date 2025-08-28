@@ -1,9 +1,6 @@
-import { useContext } from "react";
-import { AppContext } from "../utils/AppContext.jsx";
+import PostsList from "./PostsList.jsx";
 
 const PostSection = () => {
-  const { posts } = useContext(AppContext);
-
   return (
     <section className="post-section">
       <div className="new-post-section">
@@ -28,17 +25,7 @@ const PostSection = () => {
           </button>
         </form>
       </div>
-      <ul className="posts-list">
-        {posts.map((post) => {
-          return (
-            <li key={post.id} className="post-li">
-              <div className="post-user">UserName</div>
-              <h3>{post.title}</h3>
-              <p>{post.content}</p>  
-            </li>
-          )
-        })}
-      </ul>
+      <PostsList />
     </section>
   );
 };

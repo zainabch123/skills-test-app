@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import UserIcon from "./UserIcon";
+import CommentsList from "./CommentsList";
 
 const PostListItem = ({ post }) => {
   const [userInfo, setUserInfo] = useState(null);
@@ -24,18 +25,19 @@ const PostListItem = ({ post }) => {
 
   return (
     <>
-    {userInfo && (
-      <li className="post-li">
-        <UserIcon userInfo={userInfo} />
-        <div className="user-info">
-          <h2>
-            {userInfo.firstName} {userInfo.lastName}
-          </h2>
-          <h3 className="post-title">{post.title}</h3>
-        </div>
-        <p className="post-content">{post.content}</p>
-      </li>
-    )}
+      {userInfo && (
+        <li className="post-li">
+          <UserIcon userInfo={userInfo} />
+          <div className="user-info">
+            <h2>
+              {userInfo.firstName} {userInfo.lastName}
+            </h2>
+            <h3 className="post-title">{post.title}</h3>
+          </div>
+          <p className="post-content">{post.content}</p>
+          <CommentsList postId={post.id} />
+        </li>
+      )}
     </>
   );
 };

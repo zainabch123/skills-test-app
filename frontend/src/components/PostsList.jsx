@@ -7,7 +7,6 @@ const PostsList = () => {
 
   const sortedPosts = [...posts].sort((a, b) => b.id - a.id);
 
-  console.log("Sorted posts:", sortedPosts);
   return (
     <ul className="posts-list">
       {sortedPosts.map((post) => (

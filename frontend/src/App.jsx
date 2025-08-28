@@ -14,7 +14,6 @@ const App = () => {
       .then((res) => res.json())
       .then((data) => {
         setPosts(data);
-        console.log("posts:", data);
       });
   }, []);
 

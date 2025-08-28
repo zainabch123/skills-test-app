@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .container {
@@ -24,22 +25,92 @@ header {
   grid-row: 2 / span 1;
   margin: 7px;
   border-radius: 10px;
-    padding: 15px;
-
+  padding: 15px;
 }
 
-.overflow-container {
+.post-section {
   overflow: scroll;
   overflow-x: hidden;
+  padding: 20px;
 }
 
-.overflow-container h2 {
-  margin: 7px;
-}
-
-.box {
+.new-post-section {
   background-color: rgb(78, 150, 202, 0.3);
-  height: 500px;
-  margin: 7px;
-  border-radius: 10px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.user-icon {
+  text-align: center;
+  margin-right: 10px;
+}
+
+.user-img {
+  background-color: rgb(57, 107, 144);
+  color: white;
+  padding: 10px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  align-content: center;
+  cursor: pointer;
+}
+
+.user-img:hover {
+  background-color: rgb(57, 107, 144, 0.5);
+}
+
+.new-post-form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+
+#title,
+#content {
+  width: 100%;
+  padding: 15px;
+  margin: 5px;
+  font-size: 1.1rem;
+  border-radius: 15px;
+  border: none;
+  outline: none;
+}
+
+#content {
+  grid-row: 2 / span 1;
+}
+
+.new-post-form button {
+  grid-row: 2;
+  border: none;
+  border-radius: 15px;
+  margin: 5px 5px 5px 15px;
+  width: 110px;
+  font-size: 1rem;
+  padding: 10px;
+  cursor: pointer;
+  background-color: rgb(57, 107, 144);
+  color: white;
+}
+
+.new-post-form button:hover {
+  background-color: rgb(57, 107, 144, 0.5);
+}
+
+
+.posts-list {
+  margin-top: 20px;
+  display: grid;
+  gap: 20px;
+  list-style: none;
+}
+
+.post-li{
+    background-color: rgb(78, 150, 202, 0.3);
+    padding: 20px;
+    border-radius: 15px;
+    
 }

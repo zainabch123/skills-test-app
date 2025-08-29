@@ -27,8 +27,6 @@ const App = () => {
     fetchAllPosts();
   }, []);
 
-  console.log("posts", posts);
-
   return (
     <AppContext.Provider value={{ posts, fetchAllPosts }}>
       <div className="container">

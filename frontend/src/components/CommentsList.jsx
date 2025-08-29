@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import CommentsListItem from "./CommentListItem";
 
-const CommentsList = ({ postId }) => {
+const CommentsList = ({ postId, showPrevious }) => {
   const [comments, setComments] = useState([]);
 
   useEffect(() => {
@@ -23,10 +23,18 @@ const CommentsList = ({ postId }) => {
     fetchComments();
   }, [postId]);
 
+  const commentsToDisplay = comments.slice(0,3);
+
   return (<ul className="comments-list">
-    {comments.map((comment) => (
+
+    {showPrevious ? (
+
+    comments.map((comment) => (
         <CommentsListItem key={comment.id} comment={comment}/>
-    ))}
+    ))) : (
+       commentsToDisplay.map((comment) => (
+        <CommentsListItem key={comment.id} comment={comment}/>
+    ) ))}
 
   </ul>);
 };

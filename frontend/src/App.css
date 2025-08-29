@@ -154,3 +154,18 @@ header {
   margin-left: 10px;
   border-radius: 15px;
 }
+
+.comment-toggle {
+  grid-column: 2;
+  width: fit-content;
+  padding: 10px;
+  border-radius: 15px;
+  border: none;
+  background-color: rgb(243, 60, 28);
+  color: white;
+  cursor: pointer;
+}
+
+.comment-toggle:hover {
+  background-color: rgb(243, 60, 28, 0.8);
+}

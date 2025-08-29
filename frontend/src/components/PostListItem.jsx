@@ -4,6 +4,7 @@ import CommentsList from "./CommentsList";
 
 const PostListItem = ({ post }) => {
   const [userInfo, setUserInfo] = useState(null);
+  const [showPrevious, setShowPrevious] = useState(true);
 
   useEffect(() => {
     const fetchUserInfo = async () => {
@@ -23,6 +24,10 @@ const PostListItem = ({ post }) => {
     fetchUserInfo();
   }, [post.contactId]);
 
+  function handleChange(event) {
+    setShowPrevious(!showPrevious);
+  }
+
   return (
     <>
       {userInfo && (
@@ -35,7 +40,12 @@ const PostListItem = ({ post }) => {
             <h3 className="post-title">{post.title}</h3>
           </div>
           <p className="post-content">{post.content}</p>
-          <CommentsList postId={post.id} />
+          <button className="comment-toggle" onClick={handleChange}>
+            {!showPrevious
+              ? "Show Previous Comments"
+              : "Hide Previous Comments"}
+          </button>
+          <CommentsList postId={post.id} showPrevious={showPrevious} />
         </li>
       )}
     </>

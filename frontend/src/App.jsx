@@ -9,16 +9,28 @@ import "./App.css";
 const App = () => {
   const [posts, setPosts] = useState([]);
 
+  const fetchAllPosts = async () => {
+    try {
+      const response = await fetch(
+        "https://boolean-uk-api-server.fly.dev/zainabch123/post"
+      );
+
+      const data = await response.json();
+
+      setPosts(data);
+    } catch (error) {
+      console.log("Error", error);
+    }
+  };
+
   useEffect(() => {
-    fetch("https://boolean-uk-api-server.fly.dev/zainabch123/post")
-      .then((res) => res.json())
-      .then((data) => {
-        setPosts(data);
-      });
+    fetchAllPosts();
   }, []);
 
+  console.log("posts", posts);
+
   return (
-    <AppContext.Provider value={{posts}}>
+    <AppContext.Provider value={{ posts, fetchAllPosts }}>
       <div className="container">
         <Header />
         <LeftSidebar />
